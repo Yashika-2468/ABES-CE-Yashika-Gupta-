@@ -6,7 +6,7 @@
 <body>
     <script>
         const mypromise =new Promise((resolve,reject)=>{
-            const password="aditya@123";
+            const password="aditya@1";
             if(password.length>8)
 
             {
@@ -24,6 +24,8 @@
         })
         mypromise.catch((arr)=>{
             console.log(arr);
+        }).finally(()=>{
+            console.log("we are coder");
         })
 
     </script>
