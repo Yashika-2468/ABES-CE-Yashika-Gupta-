@@ -1,0 +1,23 @@
+nav {
+  background: #664e8d;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+nav .logo {
+  color: white;
+  font-size: 20px;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
