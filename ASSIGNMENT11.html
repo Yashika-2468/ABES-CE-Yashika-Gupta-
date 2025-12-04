@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic To-Do List</title>
+</head>
+<body>
+
+  <h3>Tasks</h3>
+  <div id="inputContainer">
+    <input type="text" placeholder="Enter task">
+  </div>
+  <button onclick="addInput()">+</button>
+  <br><br>
+  <button onclick="showTasks()">List All</button>
+
+  <div id="taskCart" style="display:none; margin-top:20px;">
+    <h4>All Tasks:</h4>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addInput() {
+      const container = document.getElementById('inputContainer');
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'Enter task';
+      container.appendChild(document.createElement('br'));
+      container.appendChild(input);
+    }
+
+    function showTasks() {
+      const inputs = document.querySelectorAll('#inputContainer input');
+      const list = document.getElementById('taskList');
+      list.innerHTML = ''; // clear previous list
+
+      inputs.forEach(input => {
+        const task = input.value.trim();
+        if (task !== '') {
+          const li = document.createElement('li');
+          li.textContent = task;
+          list.appendChild(li);
+        }
+      });
+
+      document.getElementById('taskCart').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
